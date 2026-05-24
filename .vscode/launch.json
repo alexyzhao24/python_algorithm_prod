@@ -1,0 +1,22 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Debug Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "preLaunchTask": "modify_syspath",
+            "args": ["--import-mode=importlib", "-S"], //"args": ["-S"],  // Disables site module that appends python312.zip??
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",  // Explicitly set PYTHONPATH
+                "PYTHONNOUSERSITE": "1"
+            },
+            "console": "integratedTerminal"
+        }
+    ]
+}

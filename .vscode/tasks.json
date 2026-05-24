@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "modify_syspath",
+        "type": "process",
+        "command": "${command:python.interpreterPath}",
+        "args": [
+          "-c",
+          "import sys, json; sys.path = [p for p in sys.path if not p.endswith('python312.zip')]; print(json.dumps(sys.path))"
+        ],
+        "problemMatcher": []
+      }
+    ]
+  }
